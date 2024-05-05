@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Check</title>
+
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/564x/01/61/de/0161de6349f31a6cfba60d3b1b4260e0.jpg');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            height: 100vh; /* Ensure full viewport height */
+        }
+
+        #container {
+            text-align: center; /* Center align all content */
+        }
+
+        #myButton {
+            font-family: "Caveat", cursive;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 1rem; /* Adjust button font size */
+            background-color: #647562;
+            border: 2px solid transparent;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px; /* Adjust button padding */
+            margin: 20px; /* Add spacing around the button */
+            cursor: pointer;
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        #myButton a {
+            color: inherit; /* Set anchor tag color to inherit from its parent (white in this case) */
+            text-decoration: none; /* Remove underline */
+        }
+
+        #myButton:hover {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transform: translate(-5px, -5px);
+            border-color: #ABA98D;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="container">
+    <div class="lock">
+        <img
+                src="/static/123.gif"
+                alt=""
+                height="500px"
+        width="500px"
+        class="bg-transparent"
+        />
+    </div>
+    <button id="myButton"><a href="{{ url_for('hello_world_app3') }}">Unlock the Truth: Click Here to Verify Your URL!</a></button>
+</div>
+
+<!-- Bootstrap JS (if needed) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

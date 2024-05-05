@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Checker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            width: 50%;
+            background-color: rgb(167, 146, 119);
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 10px 10px rgba(10, 9, 9, 0.1);
+        }
+
+        h1 {
+            color: rgb(84, 65, 46);
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        input[type="url"] {
+            flex-grow: 1;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="url"]:focus {
+            border-color: rgb(167, 146, 119);
+        }
+
+        button[type="submit"] {
+            background-color:rgb(209, 187, 158);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body style="background-image: url(https://i.pinimg.com/originals/01/61/de/0161de6349f31a6cfba60d3b1b4260e0.jpg);">
+<div class="container">
+    <h1>Phishing URL Checker</h1>
+    <form action="/home" method ="post">
+        <input type="url" id="url" name="url" placeholder="Enter " required>
+        <button type="submit">CHECK</button>
+    </form>
+    <div class="col-md" id="form2">
+
+        <br>
+        <h6 class = "right "><a href= {{ url }} target="_blank">{{ url }}</a></h6>
+
+        <br>
+        <h3 id="prediction"></h3>
+        <button class="button2" id="button2" role="button" onclick="window.open('{{url}}')" target="_blank" >Still want to Continue</button>
+        <button class="button1" id="button1" role="button"  onclick="window.open('{{url}}')" target="_blank">Continue</button>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+
+<script>
+
+    let x = '{{xx}}';
+    let num = x*100;
+    if (0<=x && x<0.50){
+        num = 100-num;
+    }
+    let txtx = num.toString();
+    if(x<=1 && x>=0.50){
+        var label = "Website is "+txtx +"% safe to use...";
+        document.getElementById("prediction").innerHTML = label;
+        document.getElementById("button1").style.display="block";
+    }
+    else if (0<=x && x<0.50){
+        var label = "Website is "+txtx +"% unsafe to use..."
+        document.getElementById("prediction").innerHTML = label ;
+        document.getElementById("button2").style.display="block";
+    }
+
+</script>
+
+</body>
+</html>
+
+
+
